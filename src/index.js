@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "normalize.css";
 import "sakura.css";
 
 import ResponseFrame from "./components/ResponseFrame";
