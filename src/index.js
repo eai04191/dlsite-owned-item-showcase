@@ -13,6 +13,19 @@ import Footer from "./components/Footer";
 
 import "./styles.scss";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+    faBookOpen,
+    faHeadphones,
+    faVideo,
+    faGamepad,
+    faChartPie
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faGithub, faTwitter);
+library.add(faBookOpen, faHeadphones, faVideo, faGamepad, faChartPie);
+
 class App extends React.Component {
     constructor(props) {
         super(props);

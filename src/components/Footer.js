@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Footer extends React.Component {
     render() {
@@ -15,6 +16,7 @@ export default class Footer extends React.Component {
                             target="_blank"
                             rel="noreferrer noopener"
                         >
+                            <FontAwesomeIcon icon={["fab", "github"]} />
                             ソースコード
                         </a>
                     </p>
