@@ -6,7 +6,7 @@ export default class ResponseFrame extends React.Component {
         return (
             <iframe
                 title="DLsite API Resopnse"
-                src="https://play.dlsite.com/api/dlsite/purchases?sync=true&limit=5000"
+                src="https://play.dlsite.com/api/dlsite/purchases?limit=5000"
                 className={styles.ResponseFrame}
                 referrerPolicy="no-referrer"
             />
