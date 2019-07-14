@@ -5,7 +5,7 @@ export default class ItemRow extends React.Component {
         const item = this.props.item;
         return (
             <tr>
-                <td className="icon">
+                <td>
                     <img src={item.work_files.sam} alt={item.work_name} />
                 </td>
                 <td>{item.workno}</td>

@@ -1,21 +1,16 @@
 import React from "react";
+import styles from "./SearchBar.module.scss";
 
 export default class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-    }
-
-    handleFilterTextChange(e) {
+    handleFilterTextChange = e => {
         this.props.onFilterTextChange(e.target.value);
-    }
+    };
 
     render() {
         const filterText = this.props.filterText;
         return (
-            <form>
+            <form className={styles.SearchBar}>
                 <input
-                    id="search"
                     type="text"
                     placeholder="Search..."
                     value={filterText}
