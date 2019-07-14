@@ -1,0 +1,13 @@
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+#search {
+    width: 100%;
+}
+
+table .icon img {
+    min-width: 2rem;
+    height: 2rem;
+}
