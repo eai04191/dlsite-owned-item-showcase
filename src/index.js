@@ -8,6 +8,8 @@ import ResponseFrame from "./components/ResponseFrame";
 import ParseForm from "./components/ParseForm";
 import SearchBar from "./components/SearchBar";
 import ItemTable from "./components/ItemTable";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import "./styles.scss";
 
@@ -39,7 +41,8 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <h1>DLsiteの購入作品一覧を共有するやつ</h1>
+                <Header />
+
                 <section style={this.state.parseSectionDisplay}>
                     {/* <h2>1. タイトル未定</h2> */}
                     <p>
@@ -71,6 +74,8 @@ class App extends React.Component {
                         items={this.state.items}
                     />
                 </section>
+
+                <Footer />
             </>
         );
     }
