@@ -46,13 +46,13 @@ class App extends React.Component {
                         <br />
                         表示されない場合は
                         <a
-                            href="https://login.dlsite.com/login?user=self"
+                            href="https://ssl.dlsite.com/home/mypage"
                             target="_blank"
                             rel="noreferrer noopener"
                         >
                             DLsiteにログイン
                         </a>
-                        してください。
+                        してから再読込してください。
                     </p>
                     <p>
                         <ResponseFrame />
