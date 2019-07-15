@@ -30,19 +30,26 @@ import {
 library.add(faGithub, faTwitter);
 library.add(faBookOpen, faHeadphones, faVideo, faGamepad, faChartPie);
 
-class App extends React.Component {
-    constructor(props) {
+interface State {
+    filterText: string;
+    items: DLsitePurchasesAPI.RootObject | null;
+    itemListDisplay: { display: string };
+    parseSectionDisplay: { display: string };
+}
+
+class App extends React.Component<{}, State> {
+    constructor(props: any) {
         super(props);
 
         this.state = {
             filterText: "",
-            items: items,
+            items: null,
             itemListDisplay: { display: "none" },
             parseSectionDisplay: { display: "block" }
         };
     }
 
-    handleItemChange = items => {
+    handleItemChange = (items: any): void => {
         // history.push(JSON.stringify(items));
         this.setState({
             items: items,
@@ -51,7 +58,7 @@ class App extends React.Component {
         });
     };
 
-    handleFilterTextChange = filterText => {
+    handleFilterTextChange = (filterText: string): void => {
         this.setState({
             filterText: filterText
         });
@@ -99,32 +106,24 @@ class App extends React.Component {
                     </p>
                     <ParseForm onHandleItemChange={this.handleItemChange} />
                 </section>
-                <section style={this.state.itemListDisplay}>
-                    {/* <h2>2. 一覧</h2> */}
-                    <SearchBar
-                        filterText={this.state.filterText}
-                        onFilterTextChange={this.handleFilterTextChange}
-                    />
-                    <ItemTable
-                        filterText={this.state.filterText}
-                        items={this.state.items}
-                    />
-                </section>
+                {this.state.items ? (
+                    <section style={this.state.itemListDisplay}>
+                        {/* <h2>2. 一覧</h2> */}
+                        <SearchBar
+                            filterText={this.state.filterText}
+                            onFilterTextChange={this.handleFilterTextChange}
+                        />
+                        <ItemTable
+                            filterText={this.state.filterText}
+                            items={this.state.items}
+                        />
+                    </section>
+                ) : null}
 
                 <Footer />
             </Router>
         );
     }
 }
-
-const items = {
-    works: [
-        {
-            workno: "",
-            work_name: "",
-            work_files: { sam: "" }
-        }
-    ]
-};
 
 ReactDOM.render(<App />, document.getElementById("root"));

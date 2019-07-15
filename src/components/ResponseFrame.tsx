@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ResponseFrame.module.scss";
 
-export default class ResponseFrame extends React.Component {
+export default class ResponseFrame extends React.Component<{},{}> {
     render() {
         return (
             <iframe

@@ -1,11 +1,16 @@
 import React from "react";
 import ItemRow from "./ItemRow";
-import styles from "./ItemTable.module.scss"
+import styles from "./ItemTable.module.scss";
 
-export default class ItemTable extends React.Component {
+interface Props {
+    filterText: string;
+    items: DLsitePurchasesAPI.RootObject;
+}
+
+export default class ItemTable extends React.Component<Props, {}> {
     render() {
         const filterText = this.props.filterText;
-        const rows = [];
+        const rows: any = [];
 
         this.props.items.works.forEach(item => {
             if (item.workno.indexOf(filterText) === -1) {

@@ -1,15 +1,23 @@
 import React from "react";
 import styles from "./ParseForm.module.scss";
 
-export default class ParseForm extends React.Component {
-    constructor() {
-        super();
+interface Props {
+    onHandleItemChange: Function;
+}
+
+interface State {
+    json: string;
+}
+
+export default class ParseForm extends React.Component<Props, State> {
+    constructor(props: any) {
+        super(props);
         this.state = {
             json: ""
         };
     }
 
-    handleChange = e => {
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const json = e.target.value;
 
         this.setState({
@@ -26,7 +34,7 @@ export default class ParseForm extends React.Component {
 
     render() {
         return (
-            <form className={styles.ParseForm} onSubmit={this.handleSubmit}>
+            <form className={styles.ParseForm}>
                 <input
                     type="text"
                     placeholder='{"total":...'

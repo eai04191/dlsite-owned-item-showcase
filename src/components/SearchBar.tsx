@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "./SearchBar.module.scss";
 
-export default class SearchBar extends React.Component {
-    handleFilterTextChange = e => {
+interface Props {
+    onFilterTextChange: Function;
+    filterText: string;
+}
+
+export default class SearchBar extends React.Component<Props, {}> {
+    handleFilterTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.props.onFilterTextChange(e.target.value);
     };
 
