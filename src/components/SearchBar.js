@@ -12,7 +12,7 @@ export default class SearchBar extends React.Component {
             <form className={styles.SearchBar}>
                 <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="ID Search..."
                     value={filterText}
                     onChange={this.handleFilterTextChange}
                 />

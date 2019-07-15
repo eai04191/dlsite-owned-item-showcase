@@ -20,6 +20,7 @@ export default class ItemTable extends React.Component {
                         <th />
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Maker</th>
                     </tr>
                 </thead>
                 <tbody>{rows}</tbody>
