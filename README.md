@@ -1,4 +1,4 @@
-# DLsite Ownded Item Showcase
+# DLsite Owned Item Showcase
 
 ## Run
 
