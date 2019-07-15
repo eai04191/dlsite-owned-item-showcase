@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router } from "react-router-dom";
+
+import axios from "axios";
+import history from "./history";
 
 import "normalize.css";
 import "sakura.css";
@@ -29,6 +33,7 @@ library.add(faBookOpen, faHeadphones, faVideo, faGamepad, faChartPie);
 class App extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             filterText: "",
             items: items,
@@ -38,6 +43,7 @@ class App extends React.Component {
     }
 
     handleItemChange = items => {
+        // history.push(JSON.stringify(items));
         this.setState({
             items: items,
             itemListDisplay: { display: "block" },
@@ -51,9 +57,26 @@ class App extends React.Component {
         });
     };
 
+    componentWillMount = () => {
+        const pathMatch = history.location.search.match(/^\?(http[s]?:\/\/.+)/);
+        if (pathMatch) {
+            console.log("パスが含まれているようです");
+            const url = pathMatch[1];
+            axios
+                .get(url)
+                .then(res => {
+                    console.log(res.data);
+                    this.handleItemChange(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+    };
+
     render() {
         return (
-            <>
+            <Router history={history}>
                 <Header />
 
                 <section style={this.state.parseSectionDisplay}>
@@ -89,7 +112,7 @@ class App extends React.Component {
                 </section>
 
                 <Footer />
-            </>
+            </Router>
         );
     }
 }
