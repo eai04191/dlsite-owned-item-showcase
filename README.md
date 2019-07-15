@@ -5,3 +5,7 @@
 ```
 yarn start
 ```
+
+# License
+
+[**Giant Penis License (GPL)**](http://giant-penis-license.org)
