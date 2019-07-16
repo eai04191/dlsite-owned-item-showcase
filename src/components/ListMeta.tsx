@@ -14,7 +14,10 @@ interface State {
 export default class ListMeta extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
-        this.state = { shareButtonDisable: false, title: "" };
+        this.state = {
+            shareButtonDisable: false,
+            title: "DLsiteの所持作品一覧を共有するやつ"
+        };
     }
 
     handleShare = (e: React.FormEvent<HTMLButtonElement>) => {
@@ -32,7 +35,9 @@ export default class ListMeta extends React.Component<Props, State> {
     render() {
         const meta = this.props.meta;
         if (meta) {
-            const title = meta.name + "さんの所持作品 - DLsiteの所持作品一覧を共有するやつ";
+            const title =
+                meta.name +
+                "さんの所持作品 - DLsiteの所持作品一覧を共有するやつ";
             console.log(title);
             if (title !== this.state.title) {
                 this.setState({ title: title });
