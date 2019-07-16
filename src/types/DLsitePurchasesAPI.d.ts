@@ -5,7 +5,6 @@ declare module DLsitePurchasesAPI {
         category_name: string;
         name: string;
     }
-
     export interface WorkFiles {
         sam: string;
         mini: string;
@@ -13,7 +12,6 @@ declare module DLsitePurchasesAPI {
         ["sam@2x"]: string;
         ["sam@3x"]: string;
     }
-
     export interface Work {
         workno: string;
         sales_date: string;
@@ -52,15 +50,13 @@ declare module DLsitePurchasesAPI {
         is_playexec: boolean;
         content_size: string;
     }
-
     export interface WorkType2 {
         value: string;
         category_id: string;
         category_name: string;
         name: string;
     }
-
-    export interface RootObject {
+    export interface Root {
         total: number;
         limit: number;
         offset: number;

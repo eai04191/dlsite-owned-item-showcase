@@ -4,7 +4,7 @@ import styles from "./ItemTable.module.scss";
 
 interface Props {
     filterText: string;
-    items: DLsitePurchasesAPI.RootObject;
+    items: DLsitePurchasesAPI.Root;
 }
 
 export default class ItemTable extends React.Component<Props, {}> {
