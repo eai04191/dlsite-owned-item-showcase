@@ -7,8 +7,8 @@
     fetch("https://play.dlsite.com/api/dlsite/purchases?limit=5000", {
         credentials: "include"
     })
-        .then(response => {
-            return response.text();
+        .then(res => {
+            return res.text();
         })
         .then(jsonString => {
             let name = prompt("名前を入力してください。", "名無し");
@@ -16,11 +16,14 @@
                 if (!name) {
                     name = "名無し";
                 }
+                return { name, jsonString };
             }
-
+            throw Error("cancel");
+        })
+        .then(data => {
             const params = new URLSearchParams();
-            params.append("data", jsonString);
-            params.append("name", name);
+            params.append("data", data.jsonString);
+            params.append("name", data.name);
 
             return fetch("https://dois.now.sh/v1/items", {
                 method: "POST",
@@ -34,7 +37,10 @@
         .then(data => {
             window.open("http://dois.netlify.com/?" + data.id);
         })
-        .catch(error =>
-            alert("取得・送信中にエラーが発生しました。\n" + error)
-        );
+        .catch(err => {
+            if (err.message === "cancel") {
+                return false;
+            }
+            alert("取得・送信中にエラーが発生しました。\n" + err);
+        });
 })();
