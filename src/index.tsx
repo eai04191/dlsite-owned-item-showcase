@@ -164,6 +164,20 @@ class App extends React.Component<{}, State> {
                                 のタブで開いてください。
                                 <br />
                                 所持作品を収集し共有ページを作成します。
+                                <br />
+                                <p>
+                                    <ExternalLink
+                                        href="https://gfycat.com/politedismalanteater"
+                                        inner="Android Chromeの例"
+                                    />
+                                </p>
+                                <p>
+                                    <ExternalLink
+                                        href="https://gfycat.com/skinnyweirdarcticduck"
+                                        inner="iOS Chromeの例"
+                                    />
+                                    (iOS Safariでは利用できません)
+                                </p>
                             </p>
                         </details>
 
