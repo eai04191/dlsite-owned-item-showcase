@@ -16,6 +16,7 @@ import SearchBar from "./components/SearchBar";
 import ItemTable from "./components/ItemTable";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ExternalLink from "./components/ExternalLink";
 
 import "./styles.scss";
 
@@ -128,21 +129,50 @@ class App extends React.Component<{}, State> {
 
                     <section style={this.state.parseSectionDisplay}>
                         <p>
-                            下のなんかよくわからないやつを全て選択して下の入力欄にコピペしてください。
+                            下のなんかよくわからないやつを
+                            <strong>全て選択</strong>
+                            して下の入力欄にコピペしてください。
                             <br />
                             表示されない場合は
-                            <a
+                            <ExternalLink
                                 href="https://ssl.dlsite.com/home/mypage"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
-                                DLsiteにログイン
-                            </a>
+                                inner="DLsiteにログイン"
+                            />
                             してから再読込してください。
                         </p>
+
+                        <details>
+                            <summary>コピーができませんか？</summary>
+                            {/* eslint-disable jsx-a11y/anchor-is-valid, no-script-url*/}
+                            <p>
+                                <a
+                                    href={
+                                        "javascript:((d)=>{s=d.createElement('script');s.src='" +
+                                        document.location.origin +
+                                        "/bookmarklet.js';d.body.appendChild(s);})(document)"
+                                    }
+                                >
+                                    DOISに送信
+                                </a>
+                            </p>
+                            <p>
+                                上のリンクをブックマークに保存して、
+                                <ExternalLink
+                                    href="https://play.dlsite.com/#/library"
+                                    inner="DLsite Play"
+                                />
+                                のタブで開いてください。
+                                <br />
+                                所持作品を収集し共有ページを作成します。
+                            </p>
+                        </details>
+
                         <p>
                             <ResponseFrame />
                         </p>
+
+                        {/* eslint-enable jsx-a11y/anchor-is-valid, no-script-url*/}
+
                         <ParseForm onHandleItemChange={this.handleItemChange} />
                     </section>
                     {this.state.res ? (
