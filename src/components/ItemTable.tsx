@@ -18,18 +18,6 @@ export default class ItemTable extends React.Component<Props, {}> {
             }
             rows.push(<ItemRow item={item} key={item.workno} />);
         });
-        return (
-            <table className={styles.ItemTable}>
-                <thead>
-                    <tr>
-                        <th />
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Maker</th>
-                    </tr>
-                </thead>
-                <tbody>{rows}</tbody>
-            </table>
-        );
+        return <div className={styles.ItemTable}>{rows}</div>;
     }
 }

@@ -7,7 +7,7 @@ import axios from "axios";
 import history from "./history";
 
 import "normalize.css";
-import "sakura.css";
+// import "sakura.css";
 
 import ResponseFrame from "./components/ResponseFrame";
 import ParseForm from "./components/ParseForm";
