@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ItemRow.module.scss";
+import ExternalLink from "./ExternalLink";
 
 interface Props {
     item: DLsitePurchasesAPI.Work;
@@ -33,26 +34,26 @@ export default class ItemRow extends React.Component<Props, {}> {
 
                         <div className={styles.info}>
                             <h1>
-                                <a
+                                <ExternalLink
                                     href={this.createItemLink(
                                         i.site_id,
                                         i.workno
                                     )}
                                 >
                                     {i.work_name}
-                                </a>
+                                </ExternalLink>
                             </h1>
                             <div className={styles.flexRow}>
                                 <ul className={styles.list}>
                                     <li className={styles.listItem}>
-                                        <a
+                                        <ExternalLink
                                             href={this.createMakerLink(
                                                 i.site_id,
                                                 i.maker_id
                                             )}
                                         >
                                             {i.maker_name}
-                                        </a>
+                                        </ExternalLink>
                                     </li>
                                 </ul>
                                 <span className={styles.open}>︾</span>
