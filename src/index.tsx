@@ -134,10 +134,9 @@ class App extends React.Component<{}, State> {
                             して下の入力欄にコピペしてください。
                             <br />
                             表示されない場合は
-                            <ExternalLink
-                                href="https://ssl.dlsite.com/home/mypage"
-                                inner="DLsiteにログイン"
-                            />
+                            <ExternalLink href="https://ssl.dlsite.com/home/mypage">
+                                DLsiteにログイン
+                            </ExternalLink>
                             してから再読込してください。
                         </p>
 
@@ -157,25 +156,22 @@ class App extends React.Component<{}, State> {
                             </p>
                             <p>
                                 上のリンクをブックマークに保存して、
-                                <ExternalLink
-                                    href="https://play.dlsite.com/#/library"
-                                    inner="DLsite Play"
-                                />
+                                <ExternalLink href="https://play.dlsite.com/#/library">
+                                    DLsite Play
+                                </ExternalLink>
                                 のタブで開いてください。
                                 <br />
                                 所持作品を収集し共有ページを作成します。
                                 <br />
                                 <p>
-                                    <ExternalLink
-                                        href="https://gfycat.com/politedismalanteater"
-                                        inner="Android Chromeの例"
-                                    />
+                                    <ExternalLink href="https://gfycat.com/politedismalanteater">
+                                        Android Chromeの例
+                                    </ExternalLink>
                                 </p>
                                 <p>
-                                    <ExternalLink
-                                        href="https://gfycat.com/skinnyweirdarcticduck"
-                                        inner="iOS Chromeの例"
-                                    />
+                                    <ExternalLink href="https://gfycat.com/skinnyweirdarcticduck">
+                                        iOS Chromeの例
+                                    </ExternalLink>
                                     (iOS Safariでは利用できません)
                                 </p>
                             </p>
