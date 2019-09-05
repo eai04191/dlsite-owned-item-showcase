@@ -1,24 +1,30 @@
 import React from "react";
-import styles from "./Footer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
+import ExternalLink from "./ExternalLink";
 
 export default class Footer extends React.Component {
     render() {
         return (
-            <footer className={styles.Footer}>
+            <footer
+                className={classNames(
+                    "mt-24",
+                    "py-16",
+                    "border-t-2",
+                    "border-teal-600",
+                    "text-gray-700",
+                    "text-center"
+                )}
+            >
                 <small>
-                    <p>
+                    <p className="mb-3">
                         このサイトはDLsiteおよび運営会社エイシスとは一切関係ありません。
                     </p>
                     <p>
-                        <a
-                            href="https://github.com/eai04191/dlsite-owned-item-showcase"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
+                        <ExternalLink href="https://github.com/eai04191/dlsite-owned-item-showcase">
                             <FontAwesomeIcon icon={["fab", "github"]} />
                             ソースコード
-                        </a>
+                        </ExternalLink>
                     </p>
                 </small>
             </footer>

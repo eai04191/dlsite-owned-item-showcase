@@ -6,8 +6,7 @@ import DocumentTitle from "react-document-title";
 import axios from "axios";
 import history from "./history";
 
-import "normalize.css";
-import "sakura.css";
+import "./tailwind.css";
 
 import ResponseFrame from "./components/ResponseFrame";
 import ParseForm from "./components/ParseForm";
@@ -27,11 +26,19 @@ import {
     faHeadphones,
     faVideo,
     faGamepad,
-    faChartPie
+    faChartPie,
+    faAngleDown
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faGithub, faTwitter);
-library.add(faBookOpen, faHeadphones, faVideo, faGamepad, faChartPie);
+library.add(
+    faBookOpen,
+    faHeadphones,
+    faVideo,
+    faGamepad,
+    faChartPie,
+    faAngleDown
+);
 
 interface State {
     filterText: string;
@@ -128,20 +135,19 @@ class App extends React.Component<{}, State> {
                     <Header />
 
                     <section style={this.state.parseSectionDisplay}>
-                        <p>
+                        <p className="mb-4">
                             下のなんかよくわからないやつを
                             <strong>全て選択</strong>
                             して下の入力欄にコピペしてください。
                             <br />
                             表示されない場合は
-                            <ExternalLink
-                                href="https://ssl.dlsite.com/home/mypage"
-                                inner="DLsiteにログイン"
-                            />
+                            <ExternalLink href="https://ssl.dlsite.com/home/mypage">
+                                DLsiteにログイン
+                            </ExternalLink>
                             してから再読込してください。
                         </p>
 
-                        <details>
+                        <details className="mb-4">
                             <summary>コピーができませんか？</summary>
                             {/* eslint-disable jsx-a11y/anchor-is-valid, no-script-url*/}
                             <p>
@@ -157,25 +163,22 @@ class App extends React.Component<{}, State> {
                             </p>
                             <p>
                                 上のリンクをブックマークに保存して、
-                                <ExternalLink
-                                    href="https://play.dlsite.com/#/library"
-                                    inner="DLsite Play"
-                                />
+                                <ExternalLink href="https://play.dlsite.com/#/library">
+                                    DLsite Play
+                                </ExternalLink>
                                 のタブで開いてください。
                                 <br />
                                 所持作品を収集し共有ページを作成します。
                                 <br />
                                 <p>
-                                    <ExternalLink
-                                        href="https://gfycat.com/politedismalanteater"
-                                        inner="Android Chromeの例"
-                                    />
+                                    <ExternalLink href="https://gfycat.com/politedismalanteater">
+                                        Android Chromeの例
+                                    </ExternalLink>
                                 </p>
                                 <p>
-                                    <ExternalLink
-                                        href="https://gfycat.com/skinnyweirdarcticduck"
-                                        inner="iOS Chromeの例"
-                                    />
+                                    <ExternalLink href="https://gfycat.com/skinnyweirdarcticduck">
+                                        iOS Chromeの例
+                                    </ExternalLink>
                                     (iOS Safariでは利用できません)
                                 </p>
                             </p>

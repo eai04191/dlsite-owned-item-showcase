@@ -1,0 +1,127 @@
+.item {
+    &:hover {
+        &:before {
+            filter: blur(1px) grayscale(0);
+            background-position-y: 35%;
+        }
+        .detail {
+            background-color: rgba(1, 1, 1, 0.35);
+        }
+    }
+
+    z-index: 0;
+    &:before {
+        $blur-radius: 4px;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        // 計算上*1でいいはずなんだけどなぜか境目が見えてしまうので*2.5してる
+        top: -$blur-radius * 2.5;
+        bottom: -$blur-radius * 2.5;
+        left: -$blur-radius * 2.5;
+        right: -$blur-radius * 2.5;
+        background: inherit;
+        background-position-y: 45%;
+        filter: blur(#{$blur-radius}) grayscale(80%);
+        // https://easings.net/#easeInOutCirc
+        transition: filter 0.2s ease-in-out,
+            background-position 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        // 無いとChromeが狂う
+        will-change: contents;
+    }
+
+    .detail {
+        background-color: rgba(1, 1, 1, 0.3);
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    /* マンガ */
+    &.MNG,/* マンガ */
+    &.MDC,/* デジタルコミック */
+    &.SCM,/* 劇画 */
+    &.comic/* 単行本 */ {
+        .detail {
+            background-image: linear-gradient(
+                to right,
+                rgba(#e6f7d6, 0.5),
+                rgba(1, 1, 1, 0.3)
+            );
+        }
+        border-left-color: darken(#e6f7d6, 30%);
+    }
+
+    /* CG・イラスト */
+    &.IST,/* イラスト集 */
+    &.INV,/* イラスト+ノベル */
+    &.ICG,/* CG集 */
+    &.IN2,/* CG+ノベル */
+    &.GSH,/* 画集 */
+    &.magazine/* 雑誌/アンソロ */ {
+        .detail {
+            background-image: linear-gradient(
+                to right,
+                rgba(#e9f5ff, 0.5),
+                rgba(1, 1, 1, 0.3)
+            );
+        }
+        border-left-color: darken(#e9f5ff, 30%);
+    }
+
+    /* ゲーム・動画 */
+    &.DNV,/* デジタルノベル */
+    &.QIZ,/* クイズ */
+    &.TBL,/* テーブル */
+    &.PZL,/* パズル */
+    &.ACN,/* アクション */
+    &.ADV,/* アドベンチャー */
+    &.RPG,/* ロールプレイング */
+    &.SLN,/* シミュレーション */
+    &.TYP,/* タイピング */
+    &.STG,/* シューティング */
+    &.ETC,/* その他 */
+    &.GAE,/* その他 */
+    &.MOV,/* 動画 */
+    &.oneshot,/* 短編 */
+    &.short/* 単話 */ {
+        .detail {
+            background-image: linear-gradient(
+                to right,
+                rgba(#f5eaff, 0.5),
+                rgba(1, 1, 1, 0.3)
+            );
+        }
+        border-left-color: darken(#f5eaff, 30%);
+    }
+
+    /* 音声・音楽 */
+    &.SOU,/* 音声 */
+    &.MUS/* 音楽 */ {
+        .detail {
+            background-image: linear-gradient(
+                to right,
+                rgba(#fbeeca, 0.5),
+                rgba(1, 1, 1, 0.3)
+            );
+        }
+        border-left-color: darken(#fbeeca, 30%);
+    }
+
+    /* その他 */
+    &.KSV,/* 官能小説 */
+    &.NRE,/* ノベル */
+    &.NR2,/* ノベル */
+    &.ET3,/* その他 */
+    &.ET4,/* その他 */
+    &.TOL,/* ツール/アクセサリ */
+    &.IMT,/* 画像素材 */
+    &.AMT/* 音素材 */ {
+        .detail {
+            background-image: linear-gradient(
+                to right,
+                rgba(#eee, 0.5),
+                rgba(1, 1, 1, 0.3)
+            );
+        }
+        border-left-color: darken(#eee, 30%);
+    }
+}

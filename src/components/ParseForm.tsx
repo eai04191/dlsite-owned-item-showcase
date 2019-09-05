@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ParseForm.module.scss";
+import classNames from "classnames";
 
 interface Props {
     onHandleItemChange: Function;
@@ -34,12 +34,29 @@ export default class ParseForm extends React.Component<Props, State> {
 
     render() {
         return (
-            <form className={styles.ParseForm}>
+            <form>
                 <input
                     type="text"
                     placeholder='{"total":...'
                     value={this.state.json}
                     onChange={this.handleChange}
+                    className={classNames(
+                        "block",
+                        "w-full",
+                        "mb-4",
+                        "py-2",
+                        "px-4",
+                        "bg-gray-200",
+                        "border",
+                        "border-transparent",
+                        "focus:bg-white",
+                        "focus:outline-none",
+                        "focus:border-teal-600",
+                        "leading-normal",
+                        "rounded",
+                        "appearance-none",
+                        "transition"
+                    )}
                 />
             </form>
         );
