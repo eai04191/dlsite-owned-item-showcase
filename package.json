@@ -28,7 +28,8 @@
         "react-scripts": "3.0.1",
         "sakura.css": "^1.0.0",
         "tailwindcss": "^1.1.2",
-        "typescript": "^3.5.3"
+        "typescript": "^3.5.3",
+        "yakuhanjp": "^3.2.0"
     },
     "scripts": {
         "build:css": "postcss src/styles/index.css -o src/tailwind.css",

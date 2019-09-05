@@ -26,11 +26,19 @@ import {
     faHeadphones,
     faVideo,
     faGamepad,
-    faChartPie
+    faChartPie,
+    faAngleDown
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faGithub, faTwitter);
-library.add(faBookOpen, faHeadphones, faVideo, faGamepad, faChartPie);
+library.add(
+    faBookOpen,
+    faHeadphones,
+    faVideo,
+    faGamepad,
+    faChartPie,
+    faAngleDown
+);
 
 interface State {
     filterText: string;
@@ -127,7 +135,7 @@ class App extends React.Component<{}, State> {
                     <Header />
 
                     <section style={this.state.parseSectionDisplay}>
-                        <p>
+                        <p className="mb-4">
                             下のなんかよくわからないやつを
                             <strong>全て選択</strong>
                             して下の入力欄にコピペしてください。
@@ -139,7 +147,7 @@ class App extends React.Component<{}, State> {
                             してから再読込してください。
                         </p>
 
-                        <details>
+                        <details className="mb-4">
                             <summary>コピーができませんか？</summary>
                             {/* eslint-disable jsx-a11y/anchor-is-valid, no-script-url*/}
                             <p>

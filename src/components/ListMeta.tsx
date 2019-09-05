@@ -1,5 +1,6 @@
 import React from "react";
 import DocumentTitle from "react-document-title";
+import classNames from "classnames";
 
 interface Props {
     onHandleShare: Function;
@@ -45,8 +46,17 @@ export default class ListMeta extends React.Component<Props, State> {
         }
         return (
             <DocumentTitle title={this.state.title}>
-                <>
-                    <h3>{meta ? meta.name + "さん" : "あなた"}の所持作品</h3>
+                <div
+                    className={classNames(
+                        "flex",
+                        "items-end",
+                        "justify-between",
+                        "mb-4"
+                    )}
+                >
+                    <h3 className={classNames("text-xl")}>
+                        {meta ? meta.name + "さん" : "あなた"}の所持作品
+                    </h3>
                     {meta ? (
                         <p>
                             <small>{meta.date}時点</small>
@@ -56,12 +66,20 @@ export default class ListMeta extends React.Component<Props, State> {
                             <button
                                 onClick={this.handleShare}
                                 disabled={this.state.shareButtonDisable}
+                                className={classNames(
+                                    "bg-teal-500",
+                                    "hover:bg-teal-700",
+                                    "text-white",
+                                    "py-2",
+                                    "px-4",
+                                    "rounded"
+                                )}
                             >
                                 共有する
                             </button>
                         </form>
                     )}
-                </>
+                </div>
             </DocumentTitle>
         );
     }
