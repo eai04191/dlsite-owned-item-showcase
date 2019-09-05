@@ -1,8 +1,19 @@
+@import "~yakuhanjp/dist/css/yakuhanjp.min.css";
+
+* {
+    box-sizing: border-box;
+}
+
 html {
-    font-size: 62.5%;
-    font-family: sans-serif;
+    background: #fff;
+    font-family: "YakuHanJP", "Meiryo", "Open Sans", sans-serif;
 }
 
 body {
     max-width: 90%;
+    margin: auto;
+}
+
+.transition {
+    transition: all 0.1s ease-in;
 }

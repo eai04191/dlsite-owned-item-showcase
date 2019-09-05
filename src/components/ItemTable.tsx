@@ -1,6 +1,6 @@
 import React from "react";
 import ItemRow from "./ItemRow";
-import styles from "./ItemTable.module.scss";
+import classNames from "classnames";
 
 interface Props {
     filterText: string;
@@ -19,17 +19,9 @@ export default class ItemTable extends React.Component<Props, {}> {
             rows.push(<ItemRow item={item} key={item.workno} />);
         });
         return (
-            <table className={styles.ItemTable}>
-                <thead>
-                    <tr>
-                        <th />
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Maker</th>
-                    </tr>
-                </thead>
-                <tbody>{rows}</tbody>
-            </table>
+            <div className={classNames("flex", "flex-wrap", "-mx-2")}>
+                {rows}
+            </div>
         );
     }
 }
