@@ -14,7 +14,7 @@ export default class Header extends React.Component {
                 )}
             >
                 <h1 className={classNames("text-2xl", "text-black")}>
-                    DLsiteの所持作品一覧を共有するやつ
+                    <a href="/">DLsiteの所持作品一覧を共有するやつ</a>
                 </h1>
             </header>
         );
