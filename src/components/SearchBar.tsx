@@ -17,7 +17,7 @@ export default class SearchBar extends React.Component<Props, {}> {
             <form>
                 <input
                     type="text"
-                    placeholder="ID Search..."
+                    placeholder="ID、作品のよみで検索できます"
                     value={filterText}
                     onChange={this.handleFilterTextChange}
                     className={classNames(
