@@ -1,7 +1,7 @@
 # DLsite Owned Item Showcase
 
 
-[共有されたページのサンプル](https://dois.netlify.com/?5d2df2ed6803304a0a431231)
+[共有されたページのサンプル](https://dois.netlify.com/?5f11e2e52d2b310008022ee7)
 
 ## Run
 
